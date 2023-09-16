@@ -31,3 +31,12 @@ resource "aws_security_group" "allow_postgress" {
 
   tags = var.tags
 }
+resource "aws_instance" "web" {
+  count = 3
+  ami           = "ami-03265a0778a880afb"
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = var.instance_names[count.index]
+  }
+}
