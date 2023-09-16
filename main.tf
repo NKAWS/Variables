@@ -40,3 +40,7 @@ resource "aws_instance" "web" {
     Name = var.instance_names[count.index]
   }
 }
+resource "aws_instance" "web" {
+  ami           = "ami-03265a0778a880afb"
+  instance_type = var.isprod ? "t3.large" : "t2.micro"
+}

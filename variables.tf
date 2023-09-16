@@ -38,3 +38,7 @@ variable "instance_names"{
     type = list
     default = ["web-server","API-server","DB server"]
 }
+variable "isProd"{
+  type = bool
+  default = "true"
+}
